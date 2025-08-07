@@ -1,0 +1,12 @@
+[package]
+name = "enumerate"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+sysinfo = "0.36.1"
+regex = "1"
+
+[lib]
+name = "enumerate"
+path = "src/enumerate.rs"
