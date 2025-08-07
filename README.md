@@ -4,7 +4,7 @@ Credential extractor from Okta Personal Password Manager extension (chromium)
 
 # Demo
 
-
+[Screencast_20250807_210036.webm](https://github.com/user-attachments/assets/5e36f1ba-a6b2-4d87-91ad-30c51ae7a8ed)
 
 # Usage
 ```powershell
