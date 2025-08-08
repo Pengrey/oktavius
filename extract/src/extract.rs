@@ -23,7 +23,7 @@ struct Field {
 pub fn extract_credentials_chrome(text: &str, verbose: bool) {
     let mut strings_list: Vec<String> = Vec::new();
 
-    let re = Regex::new(r#"("title":.*?,"format":"url","key":"field\.website\.url","label":"Login URL","value":"([^"]+)".*"key":"field\.login\.username","label":"Username","value":"([^"]+)".*"key":"field\.login\.password","secret":true,"label":"Password","value":"([^"]+)")"#).unwrap();
+    let re = Regex::new(r#"("title":.*?,"format":"url","key":"field\.website\.url","label":"Login URL","value":"([^"]+?)".*"key":"field\.login\.username","label":"Username","value":"([^"]+?)".*"key":"field\.login\.password","secret":true,"label":"Password","value":"([^"]+?)".??}]}]})"#).unwrap();
 
     for cap in re.captures_iter(text) {
         if let Some(group1) = cap.get(1) {
@@ -36,7 +36,7 @@ pub fn extract_credentials_chrome(text: &str, verbose: bool) {
             }
 
             // Fix json
-            matched_str = format!("{{ {} }}]}}]}}", &matched_str);
+            matched_str = format!("{{ {}", &matched_str);
 
             if !strings_list.contains(&matched_str) && matched_str.len() > 20 {
                 let result: Result<Data, _> = serde_json::from_str(&matched_str);
