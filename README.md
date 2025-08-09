@@ -11,7 +11,7 @@ Credential extractor from Okta Personal Password Manager extension (chromium)
 PS Z:\> .\oktavius.exe --help
 A tool to extract okta credentials from chromium
 
-Usage: peeper.exe [OPTIONS] <APPLICATION>
+Usage: oktavius.exe [OPTIONS] <APPLICATION>
 
 Arguments:
   <APPLICATION>  [possible values: msedge, chrome]
